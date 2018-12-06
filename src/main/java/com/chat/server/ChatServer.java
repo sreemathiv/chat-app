@@ -13,6 +13,7 @@ public class ChatServer {
 	private ServerSocket serverSocket;
 	private final int port;
 	private final ExecutorService executorService;
+	private static final int DEFAULT_PORT = 2000;
 
 	public ChatServer(int port) {
 		this.port = port;
@@ -31,10 +32,25 @@ public class ChatServer {
 			System.err.println("Error Starting ChatServer. Details: " + e.getMessage());
 		}
 	}
-	
+
 	public static void main(String args[]) {
-		ChatServer server = new ChatServer(2000);
+		int port = getPort(args);
+		ChatServer server = new ChatServer(port);
 		server.start();
+	}
+
+	private static int getPort(String[] args) {
+		int port;
+		if (args.length > 0) {
+			try {
+				port = Integer.parseInt(args[0]);
+			} catch (NumberFormatException e) {
+				port = DEFAULT_PORT;
+			}
+		} else {
+			port = DEFAULT_PORT;
+		}
+		return port;
 	}
 
 }

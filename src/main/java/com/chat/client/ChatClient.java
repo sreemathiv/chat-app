@@ -22,6 +22,10 @@ public class ChatClient {
 	}
 	
 	public static void main(String args[]) {
+		if(args.length < 2) {
+			System.out.println("Usage: com.chat.client.ChatClient <host> <port>");
+			System.exit(-1);
+		}
 		String host = args[0];
 		int port = Integer.parseInt(args[1]);
 		ChatClient client = new ChatClient(host,port);
