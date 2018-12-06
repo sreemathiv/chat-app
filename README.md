@@ -12,3 +12,5 @@ This will start a chat session in the same machine
 
 To chat with a user on different machine provide the IP address in place of localhost
 
+Note: chmod +x startServer.sh will give execute permission in linux
+
