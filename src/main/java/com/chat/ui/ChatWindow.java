@@ -32,7 +32,7 @@ public class ChatWindow extends javax.swing.JFrame {
         sendButton = new javax.swing.JButton();
         attachButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Chat Window");
         setName("chatWindow"); // NOI18N
         setResizable(false);
